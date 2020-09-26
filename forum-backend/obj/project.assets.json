@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "BusinessLogicLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/BusinessLogicLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogicLayer.dll": {}
+        }
+      },
+      "DataAccessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccessLayer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BusinessLogicLayer/1.0.0": {
+      "type": "project",
+      "path": "../forum-backend-semester3/BusinessLogicLayer/BusinessLogicLayer.csproj",
+      "msbuildProject": "../forum-backend-semester3/BusinessLogicLayer/BusinessLogicLayer.csproj"
+    },
+    "DataAccessLayer/1.0.0": {
+      "type": "project",
+      "path": "../forum-backend-semester3/DataAccessLayer/DataAccessLayer.csproj",
+      "msbuildProject": "../forum-backend-semester3/DataAccessLayer/DataAccessLayer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "BusinessLogicLayer >= 1.0.0",
+      "DataAccessLayer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\quint\\.nuget\\packages\\": {}
@@ -32,7 +67,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+            },
+            "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
