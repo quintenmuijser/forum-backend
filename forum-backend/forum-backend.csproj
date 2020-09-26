@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\forum-backend-semester3\BusinessLogicLayer\BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\forum-backend-semester3\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 
 
