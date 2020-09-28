@@ -11,7 +11,7 @@ namespace DataAccessLayer.Interfaces
         SectionDTO Create();
         SectionDTO GetById(int sectionId);
         IReadOnlyList<SectionDTO> GetAll();
-
+        IReadOnlyList<SectionDTO> GetAllByContainerId(int containerId);
         SectionDTO SectionDTOFromMySqlDataReader(MySqlDataReader reader);
     }
 }

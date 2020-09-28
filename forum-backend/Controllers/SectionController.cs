@@ -20,7 +20,7 @@ namespace forum_backend.Controllers
             _repo = repo;
         }
 
-         
+
         [Route("all"), ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -30,6 +30,31 @@ namespace forum_backend.Controllers
             try
             {
                 IReadOnlyList<Section> sections = _repo.GetAll();
+                if (sections.Count != 0)
+                {
+                    return Ok(sections);
+                }
+                return NotFound();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
+        [HttpGet]
+        [Route("allByContainer/{id}"), ActionName("GetAllByContainer")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetAllByContainer(int id)
+        {
+            try
+            {
+                IReadOnlyList<Section> sections = _repo.GetAllByContainerId(id);
                 if (sections.Count != 0)
                 {
                     return Ok(sections);

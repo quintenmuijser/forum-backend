@@ -43,6 +43,33 @@ namespace DataAccessLayer.Context
             return sections.AsReadOnly();
         }
 
+        public IReadOnlyList<SectionDTO> GetAllByContainerId(int containerId)
+        {
+            MySqlConnection _conn = _DB.GetConnection();
+            List<SectionDTO> sections = new List<SectionDTO>();
+            using (MySqlConnection connection = _conn)
+            {
+                //find out how to do prepared statement here
+                string query = "SELECT * FROM section where container_id = @containerId ORDER BY priority";
+                MySqlTransaction transaction = connection.BeginTransaction();
+
+                using (MySqlCommand sql_command = new MySqlCommand(query, connection))
+                {
+                    sql_command.Transaction = transaction;
+                    sql_command.Parameters.AddWithValue("@containerId", containerId);
+                    using (MySqlDataReader reader = sql_command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SectionDTO section = SectionDTOFromMySqlDataReader(reader);
+                            sections.Add(section);
+                        }
+                    }
+                }
+            }
+            return sections.AsReadOnly();
+        }
+
         public SectionDTO GetById(int sectionId)
         {
             throw new NotImplementedException();

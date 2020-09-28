@@ -44,6 +44,17 @@ namespace BusinessLogicLayer.Repositories
             return sections.AsReadOnly();
         }
 
+        public IReadOnlyList<Section> GetAllByContainerId(int containerId)
+        {
+            IReadOnlyList<SectionDTO> sectionDTOs = _context.GetAllByContainerId(containerId);
+            List<Section> sections = new List<Section>();
+            foreach (SectionDTO sectionDTO in sectionDTOs)
+            {
+                sections.Add(SectionFromSectionDTO(sectionDTO));
+            }
+            return sections.AsReadOnly();
+        }
+
         public Section GetById(int sectionId)
         {
             throw new NotImplementedException();
