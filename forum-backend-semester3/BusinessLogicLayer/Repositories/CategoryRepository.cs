@@ -55,5 +55,15 @@ namespace BusinessLogicLayer.Repositories
             throw new NotImplementedException();
         }
 
+        public IReadOnlyList<Category> GetAllBySectionId(int sectionId)
+        {
+            IReadOnlyList<CategoryDTO> categoryDTOs = _context.GetAllBySectionId(sectionId);
+            List<Category> categories = new List<Category>();
+            foreach (CategoryDTO categoryDTO in categoryDTOs)
+            {
+                categories.Add(CategoryFromCategoryDTO(categoryDTO));
+            }
+            return categories.AsReadOnly();
+        }
     }
 }

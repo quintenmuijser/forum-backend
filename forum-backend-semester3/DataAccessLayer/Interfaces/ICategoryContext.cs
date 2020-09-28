@@ -11,6 +11,7 @@ namespace DataAccessLayer.Interfaces
         CategoryDTO Create();
         CategoryDTO GetById(int categoryId);
         IReadOnlyList<CategoryDTO> GetAll();
+        IReadOnlyList<CategoryDTO> GetAllBySectionId(int sectionId);
         CategoryDTO CategoryDTOFromMySqlDataReader(MySqlDataReader reader);
     }
 }

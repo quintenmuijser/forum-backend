@@ -43,5 +43,30 @@ namespace forum_backend.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+
+        [HttpGet]
+        [Route("allBySection/{id}"), ActionName("GetAllBySection")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetAllBySection(int id)
+        {
+            try
+            {
+                IReadOnlyList<Category> categories = _repo.GetAllBySectionId(id);
+                if (categories.Count != 0)
+                {
+                    return Ok(categories);
+                }
+                return NotFound();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return StatusCode(500, "Internal server error");
+            }
+        }
     }
 }

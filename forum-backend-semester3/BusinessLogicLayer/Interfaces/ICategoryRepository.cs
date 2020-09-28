@@ -11,6 +11,7 @@ namespace BusinessLogicLayer.Interfaces
         Category Create();
         Category GetById(int categoryId);
         IReadOnlyList<Category> GetAll();
+        IReadOnlyList<Category> GetAllBySectionId(int sectionId);
         Category CategoryDTOFromMySqlDataReader(MySqlDataReader reader);
     }
 }
