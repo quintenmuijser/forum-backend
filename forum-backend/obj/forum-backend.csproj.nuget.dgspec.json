@@ -26,7 +26,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,6 +41,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
