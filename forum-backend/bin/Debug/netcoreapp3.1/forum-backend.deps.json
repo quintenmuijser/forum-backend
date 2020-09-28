@@ -1911,6 +1911,10 @@
         }
       },
       "BusinessLogicLayer/1.0.0": {
+        "dependencies": {
+          "DataAccessLayer": "1.0.0",
+          "MySql.Data": "8.0.21"
+        },
         "runtime": {
           "BusinessLogicLayer.dll": {}
         },

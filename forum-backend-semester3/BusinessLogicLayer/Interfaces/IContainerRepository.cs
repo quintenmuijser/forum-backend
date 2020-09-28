@@ -6,15 +6,20 @@ using System.Text;
 
 namespace BusinessLogicLayer.Interfaces
 {
-    public interface ITopicRepository
+    public interface IContainerRepository
     {
-        //later this needs the topicCreateDTO as varible in it
-        Topic Create();
-        Topic GetById(int topicId);
-        bool Delete(int topicId);
-        bool Lock(int topicId,int userId);
-        IReadOnlyList<Topic> GetAll();
-        IReadOnlyList<Topic> GetTopicsContaining(string content);
-        Topic TopicDTOFromMySqlDataReader(MySqlDataReader reader);
+        Container Create();
+        Container GetById(int containerId);
+        IReadOnlyList<Container> GetAll();
+
+        IReadOnlyList<Section> GetContainersSections(int containerId);
+
+        //should later on create a object which acts as a container thats filled with info here
+        IReadOnlyList<Container> GetContainersSectionsAndCategories(int containerId);
+
+
+        Topic GetMostRecentTopicCreated(int containerId);
+
+        Container ContainerDTOFromMySqlDataReader(MySqlDataReader reader);
     }
 }

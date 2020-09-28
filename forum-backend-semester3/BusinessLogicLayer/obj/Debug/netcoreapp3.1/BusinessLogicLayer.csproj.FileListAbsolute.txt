@@ -6,3 +6,6 @@ C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\Busines
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.dll
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CopyComplete

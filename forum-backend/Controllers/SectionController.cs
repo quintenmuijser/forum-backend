@@ -9,7 +9,7 @@ namespace forum_backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class SectionController : ControllerBase
     {
        
     }
