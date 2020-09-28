@@ -15,6 +15,7 @@ namespace BusinessLogicLayer.Interfaces
         bool Delete(int topicId);
         bool Lock(int topicId, int userId);
         IReadOnlyList<Topic> GetAll();
+        IReadOnlyList<Topic> GetAllByCategoryId(int categoryId);
         IReadOnlyList<Topic> GetTopicsContaining(string content);
         Topic TopicDTOFromMySqlDataReader(MySqlDataReader reader);
     }

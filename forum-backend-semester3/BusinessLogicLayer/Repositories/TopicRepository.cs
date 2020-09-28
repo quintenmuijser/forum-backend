@@ -51,6 +51,17 @@ namespace BusinessLogicLayer.Repositories
             return topics.AsReadOnly();
         }
 
+        public IReadOnlyList<Topic> GetAllByCategoryId(int categoryId)
+        {
+            IReadOnlyList<TopicDTO> topicDTOs = _context.GetAllByCategoryId(categoryId);
+            List<Topic> topics = new List<Topic>();
+            foreach (TopicDTO topicDTO in topicDTOs)
+            {
+                topics.Add(TopicFromTopicDTO(topicDTO));
+            }
+            return topics.AsReadOnly();
+        }
+
         public Topic GetById(int topicId)
         {
             throw new NotImplementedException();

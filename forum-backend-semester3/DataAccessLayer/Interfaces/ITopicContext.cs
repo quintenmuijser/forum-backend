@@ -13,6 +13,7 @@ namespace DataAccessLayer.Interfaces
         bool Delete(int topicId);
         bool Lock(int topicId, int userId);
         IReadOnlyList<TopicDTO> GetAll();
+        IReadOnlyList<TopicDTO> GetAllByCategoryId(int categoryId);
         IReadOnlyList<TopicDTO> GetTopicsContaining(string content);
         TopicDTO TopicDTOFromMySqlDataReader(MySqlDataReader reader);
     }
