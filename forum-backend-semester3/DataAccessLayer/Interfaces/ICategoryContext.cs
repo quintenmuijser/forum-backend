@@ -11,11 +11,6 @@ namespace DataAccessLayer.Interfaces
         CategoryDTO Create();
         CategoryDTO GetById(int categoryId);
         IReadOnlyList<CategoryDTO> GetAll();
-
-        IReadOnlyList<CategoryDTO> GetCategoryTopics(int containerId);
-
-        TopicDTO GetMostRecentTopicCreated(int categoryId);
-
         CategoryDTO CategoryDTOFromMySqlDataReader(MySqlDataReader reader);
     }
 }

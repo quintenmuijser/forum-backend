@@ -55,14 +55,5 @@ namespace BusinessLogicLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Category> GetCategoryTopics(int containerId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Topic GetMostRecentTopicCreated(int categoryId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -43,5 +43,6 @@ namespace forum_backend.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
     }
 }

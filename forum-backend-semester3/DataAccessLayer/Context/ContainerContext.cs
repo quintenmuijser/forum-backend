@@ -58,19 +58,6 @@ namespace DataAccessLayer.Context
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<SectionDTO> GetContainersSections(int containerId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IReadOnlyList<ContainerDTO> GetContainersSectionsAndCategories(int containerId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public TopicDTO GetMostRecentTopicCreated(int containerId)
-        {
-            throw new NotImplementedException();
-        }
+   
     }
 }

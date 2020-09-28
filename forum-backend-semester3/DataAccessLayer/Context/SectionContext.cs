@@ -48,11 +48,7 @@ namespace DataAccessLayer.Context
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<CategoryDTO> GetCategoriesFromSection(int sectionId)
-        {
-            throw new NotImplementedException();
-        }
-
+      
         public SectionDTO SectionDTOFromMySqlDataReader(MySqlDataReader reader)
         {
             SectionDTO section = new SectionDTO(

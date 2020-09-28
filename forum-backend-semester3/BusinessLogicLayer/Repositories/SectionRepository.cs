@@ -49,11 +49,7 @@ namespace BusinessLogicLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public IReadOnlyList<Category> GetCategoriesFromSection(int sectionId)
-        {
-            throw new NotImplementedException();
-        }
-
+     
         public Section SectionDTOFromMySqlDataReader(MySqlDataReader reader)
         {
             throw new NotImplementedException();
