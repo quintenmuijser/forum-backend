@@ -23,7 +23,24 @@ namespace DataAccessLayer.Context
 
         public IReadOnlyList<SectionDTO> GetAll()
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            List<SectionDTO> sections = new List<SectionDTO>();
+            using (MySqlConnection connection = _conn)
+            {
+                string query = "SELECT * FROM section ORDER BY priority";
+                using (MySqlCommand sql_command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = sql_command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SectionDTO section = SectionDTOFromMySqlDataReader(reader);
+                            sections.Add(section);
+                        }
+                    }
+                }
+            }
+            return sections.AsReadOnly();
         }
 
         public SectionDTO GetById(int sectionId)
@@ -38,7 +55,12 @@ namespace DataAccessLayer.Context
 
         public SectionDTO SectionDTOFromMySqlDataReader(MySqlDataReader reader)
         {
-            throw new NotImplementedException();
+            SectionDTO section = new SectionDTO(
+            Convert.ToInt32(reader["section_id"]),
+            Convert.ToInt32(reader["container_id"]),
+            Convert.ToInt32(reader["priority"]),
+            Convert.ToString(reader["title"]));
+            return section;
         }
     }
 }

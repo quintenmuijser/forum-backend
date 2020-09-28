@@ -20,7 +20,7 @@ namespace forum_backend.Controllers
             _repo = repo;
         }
 
-        // GET: api/Topic
+         
         [Route("all"), ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

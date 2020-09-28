@@ -29,6 +29,7 @@ namespace forum_backend.Extensions
             services.AddTransient<IDatabase, Database>();
         }
 
+        //containers
         public static void ConfigureContainerContext(this IServiceCollection services)
         {
             services.AddScoped<IContainerContext, ContainerContext>();
@@ -39,9 +40,38 @@ namespace forum_backend.Extensions
             services.AddScoped<IContainerRepository, ContainerRepository>();
         }
 
+        //sections
+        public static void ConfigureSectionContext(this IServiceCollection services)
+        {
+            services.AddScoped<ISectionContext, SectionContext>();
+        }
 
- 
-        
+        public static void ConfigureSectionRepository(this IServiceCollection services)
+        {
+            services.AddScoped<ISectionRepository, SectionRepository>();
+        }
+
+        //categories
+        public static void ConfigureCategoryContext(this IServiceCollection services)
+        {
+            services.AddScoped<ICategoryContext, CategoryContext>();
+        }
+
+        public static void ConfigureCategoryRepository(this IServiceCollection services)
+        {
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+        }
+
+        //topics
+        public static void ConfigureTopicContext(this IServiceCollection services)
+        {
+            services.AddScoped<ITopicContext, TopicContext>();
+        }
+
+        public static void ConfigureTopicRepository(this IServiceCollection services)
+        {
+            services.AddScoped<ITopicRepository, TopicRepository>();
+        }
 
     }
 }

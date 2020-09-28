@@ -18,6 +18,16 @@ namespace BusinessLogicLayer.Repositories
             _context = context;
         }
 
+        public Section SectionFromSectionDTO(SectionDTO sectionDTO)
+        {
+            Section sectionFromDTO = new Section();
+            sectionFromDTO.SectionId = sectionDTO.SectionId;
+            sectionFromDTO.ContainerId = sectionDTO.ContainerId;
+            sectionFromDTO.Priority = sectionDTO.Priority;
+            sectionFromDTO.Title = sectionDTO.Title;
+            return sectionFromDTO;
+        }
+
         public Section Create()
         {
             throw new NotImplementedException();
@@ -25,7 +35,13 @@ namespace BusinessLogicLayer.Repositories
 
         public IReadOnlyList<Section> GetAll()
         {
-            throw new NotImplementedException();
+            IReadOnlyList<SectionDTO> sectionDTOs = _context.GetAll();
+            List<Section> sections = new List<Section>();
+            foreach (SectionDTO sectionDTO in sectionDTOs)
+            {
+                sections.Add(SectionFromSectionDTO(sectionDTO));
+            }
+            return sections.AsReadOnly();
         }
 
         public Section GetById(int sectionId)

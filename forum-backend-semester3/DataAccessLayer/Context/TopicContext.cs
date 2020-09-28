@@ -28,7 +28,24 @@ namespace DataAccessLayer.Context
 
         public IReadOnlyList<TopicDTO> GetAll()
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            List<TopicDTO> topics = new List<TopicDTO>();
+            using (MySqlConnection connection = _conn)
+            {
+                string query = "SELECT * FROM topic ORDER BY topic_id";
+                using (MySqlCommand sql_command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = sql_command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TopicDTO topic = TopicDTOFromMySqlDataReader(reader);
+                            topics.Add(topic);
+                        }
+                    }
+                }
+            }
+            return topics.AsReadOnly();
         }
 
         public TopicDTO GetById(int topicId)
@@ -48,7 +65,14 @@ namespace DataAccessLayer.Context
 
         public TopicDTO TopicDTOFromMySqlDataReader(MySqlDataReader reader)
         {
-            throw new NotImplementedException();
+            TopicDTO topic = new TopicDTO(
+            Convert.ToInt32(reader["topic_id"]),
+            Convert.ToInt32(reader["category_id"]),
+            Convert.ToInt32(reader["creator_id"]),
+            Convert.ToString(reader["title"]),
+            Convert.ToString(reader["content"]),
+            Convert.ToBoolean(reader["locked"]));
+            return topic;
         }
     }
 }

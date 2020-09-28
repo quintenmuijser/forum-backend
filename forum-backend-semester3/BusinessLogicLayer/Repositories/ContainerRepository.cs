@@ -39,9 +39,9 @@ namespace BusinessLogicLayer.Repositories
 
         public IReadOnlyList<Container> GetAll()
         {
-            IReadOnlyList<ContainerDTO> ContainerDTOs = _context.GetAll();
+            IReadOnlyList<ContainerDTO> containerDTOs = _context.GetAll();
             List<Container> containers = new List<Container>();
-            foreach (ContainerDTO containerDTO in ContainerDTOs)
+            foreach (ContainerDTO containerDTO in containerDTOs)
             {
                 containers.Add(ContainerFromContainerDTO(containerDTO));
             }

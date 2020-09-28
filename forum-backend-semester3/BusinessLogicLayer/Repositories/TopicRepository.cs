@@ -30,8 +30,6 @@ namespace BusinessLogicLayer.Repositories
             return topicFromDTO;
         }
 
-
-
         public Topic Create()
         {
             throw new NotImplementedException();
@@ -44,7 +42,13 @@ namespace BusinessLogicLayer.Repositories
 
         public IReadOnlyList<Topic> GetAll()
         {
-            throw new NotImplementedException();
+            IReadOnlyList<TopicDTO> topicDTOs = _context.GetAll();
+            List<Topic> topics = new List<Topic>();
+            foreach (TopicDTO topicDTO in topicDTOs)
+            {
+                topics.Add(TopicFromTopicDTO(topicDTO));
+            }
+            return topics.AsReadOnly();
         }
 
         public Topic GetById(int topicId)

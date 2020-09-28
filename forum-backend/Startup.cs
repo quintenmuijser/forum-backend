@@ -27,8 +27,20 @@ namespace forum_backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDatabase();
+            //containers
             services.ConfigureContainerContext();
             services.ConfigureContainerRepository();
+            //sections
+            services.ConfigureSectionContext();
+            services.ConfigureSectionRepository();
+            //categories
+            services.ConfigureCategoryContext();
+            services.ConfigureCategoryRepository();
+            //topics
+            services.ConfigureTopicContext();
+            services.ConfigureTopicRepository();
+
+            //add controllers
             services.AddControllers();
         }
 

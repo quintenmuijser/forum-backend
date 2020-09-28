@@ -18,7 +18,12 @@ namespace DataAccessLayer.Context
 
         public CategoryDTO CategoryDTOFromMySqlDataReader(MySqlDataReader reader)
         {
-            throw new NotImplementedException();
+            CategoryDTO category = new CategoryDTO(
+            Convert.ToInt32(reader["category_id"]),
+            Convert.ToInt32(reader["section_id"]),
+            Convert.ToInt32(reader["priority"]),
+            Convert.ToString(reader["title"]));
+            return category;
         }
 
         public CategoryDTO Create()
@@ -28,7 +33,24 @@ namespace DataAccessLayer.Context
 
         public IReadOnlyList<CategoryDTO> GetAll()
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            List<CategoryDTO> categories = new List<CategoryDTO>();
+            using (MySqlConnection connection = _conn)
+            {
+                string query = "SELECT * FROM category ORDER BY priority";
+                using (MySqlCommand sql_command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = sql_command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CategoryDTO category = CategoryDTOFromMySqlDataReader(reader);
+                            categories.Add(category);
+                        }
+                    }
+                }
+            }
+            return categories.AsReadOnly();
         }
 
         public CategoryDTO GetById(int categoryId)
