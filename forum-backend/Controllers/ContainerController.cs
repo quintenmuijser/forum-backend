@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,8 @@ namespace forum_backend.Controllers
             _repo = repo;
         }
 
-         
+        
+     
         [Route("all"), ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

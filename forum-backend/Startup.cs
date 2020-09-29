@@ -27,6 +27,7 @@ namespace forum_backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDatabase();
+            services.ConfigureCors();
             //containers
             services.ConfigureContainerContext();
             services.ConfigureContainerRepository();
@@ -56,11 +57,24 @@ namespace forum_backend
 
             app.UseRouting();
 
+            app.Use(async (context, nextMiddleware) =>
+            {
+                context.Response.OnStarting(() =>
+                {
+                    context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+                    context.Response.Headers.Add("Expires", "-1");
+                    return Task.FromResult(0);
+                });
+                await nextMiddleware();
+            });
+
+            app.UseCors("CorsDevelopment"); ;
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireCors("CorsDevelopment");
             });
         }
     }
