@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend\\forum-backend.csproj": {}
+    "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend\\forum-backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+    "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
         "projectName": "BusinessLogicLayer",
-        "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+        "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
         "packagesPath": "C:\\Users\\quint\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quint\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -42,9 +42,25 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.7.1, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.21, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
@@ -57,23 +73,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\quint\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quint\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,23 +143,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend\\forum-backend.csproj": {
+    "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend\\forum-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend\\forum-backend.csproj",
+        "projectUniqueName": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend\\forum-backend.csproj",
         "projectName": "forum-backend",
-        "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend\\forum-backend.csproj",
+        "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend\\forum-backend.csproj",
         "packagesPath": "C:\\Users\\quint\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend\\obj\\",
+        "outputPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quint\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,11 +181,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+              "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+                "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
               },
-              "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -171,6 +199,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -186,6 +218,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -194,7 +232,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

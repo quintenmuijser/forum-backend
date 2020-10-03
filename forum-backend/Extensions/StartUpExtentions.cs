@@ -1,13 +1,15 @@
-﻿using BusinessLogicLayer.Interfaces;
+﻿using BusinessLogicLayer.HelperClasses;
+using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Repositories;
 using DataAccessLayer;
 using DataAccessLayer.Context;
 using DataAccessLayer.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 namespace forum_backend.Extensions
 {
@@ -71,6 +73,53 @@ namespace forum_backend.Extensions
         public static void ConfigureTopicRepository(this IServiceCollection services)
         {
             services.AddScoped<ITopicRepository, TopicRepository>();
+        }
+
+        //users
+        public static void ConfigureUserContext(this IServiceCollection services)
+        {
+            services.AddScoped<IUserContext, UserContext>();
+        }
+
+        public static void ConfigureUserRepository(this IServiceCollection services)
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
+        }
+
+
+        public static void ConfigurePasswordManager(this IServiceCollection services)
+        {
+            services.AddScoped<IPasswordManager, PasswordManager>();
+        }
+
+        public static void ConfigureJWTHandler(this IServiceCollection services)
+        {
+            services.AddScoped<IJWTHandler, JWTHandler>();
+        }
+
+
+        public static void ConfigureAuthenticationHandler(this IServiceCollection services)
+        {
+            services.AddScoped<IAuthenticationHandler, AuthenticationHandler>();
+        }
+
+        public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAuthentication(x => {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
+                    ValidateIssuerSigningKey = true
+
+                };
+            });
         }
 
     }

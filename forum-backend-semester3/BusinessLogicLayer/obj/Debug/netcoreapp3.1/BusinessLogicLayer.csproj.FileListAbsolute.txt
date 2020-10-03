@@ -9,3 +9,15 @@ C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\Busines
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\BusinessLogicLayer.deps.json
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\BusinessLogicLayer.dll
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.AssemblyInfo.cs
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.dll
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.pdb
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\BusinessLogicLayer\obj\Debug\netcoreapp3.1\BusinessLogicLayer.csproj.CoreCompileInputs.cache

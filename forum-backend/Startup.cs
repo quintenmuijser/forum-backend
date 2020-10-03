@@ -28,6 +28,15 @@ namespace forum_backend
         {
             services.ConfigureDatabase();
             services.ConfigureCors();
+
+            services.ConfigurePasswordManager();
+            services.ConfigureJWTHandler();
+            services.ConfigureAuthentication(Configuration);
+            services.ConfigureAuthenticationHandler();
+
+            //users
+            services.ConfigureUserContext();
+            services.ConfigureUserRepository();
             //containers
             services.ConfigureContainerContext();
             services.ConfigureContainerRepository();
@@ -52,7 +61,6 @@ namespace forum_backend
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -68,13 +76,15 @@ namespace forum_backend
                 await nextMiddleware();
             });
 
-            app.UseCors("CorsDevelopment"); ;
+            app.UseCors("CorsDevelopment");
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireCors("CorsDevelopment");
+                endpoints.MapControllers().RequireCors("CorsDevelopment").RequireAuthorization();
             });
         }
     }

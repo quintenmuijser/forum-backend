@@ -6,3 +6,12 @@ C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\DataAcc
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\quint\Desktop\forum-backend\forum-backend-semester3\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
