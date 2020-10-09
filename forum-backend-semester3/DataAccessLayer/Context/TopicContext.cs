@@ -77,7 +77,31 @@ namespace DataAccessLayer.Context
 
         public TopicDTO GetById(int topicId)
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            TopicDTO topic;
+            using (MySqlConnection connection = _conn)
+            {
+                string query = "SELECT * FROM topic WHERE topic_id = @TopicId";
+                MySqlTransaction transaction = connection.BeginTransaction();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    command.Parameters.AddWithValue("@TopicId", topicId);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            topic = TopicDTOFromMySqlDataReader(reader);
+                        }
+                        else
+                        {
+                            topic = null;
+                        }
+                    }
+                }
+            }
+            return topic;
         }
 
         public IReadOnlyList<TopicDTO> GetTopicsContaining(string content)

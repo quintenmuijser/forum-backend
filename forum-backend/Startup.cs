@@ -76,7 +76,7 @@ namespace forum_backend
                 await nextMiddleware();
             });
 
-            app.UseCors("CorsDevelopment");
+            app.UseCors("cors");
 
             app.UseAuthentication();
 
@@ -84,7 +84,7 @@ namespace forum_backend
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireCors("CorsDevelopment").RequireAuthorization();
+                endpoints.MapControllers().RequireCors("cors");
             });
         }
     }

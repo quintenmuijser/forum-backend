@@ -46,6 +46,34 @@ namespace forum_backend.Controllers
         }
 
         [HttpGet]
+        [Route("GetById/{id}"), ActionName("GetTopic")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest("Request doesn't pass validation");
+                }
+                Topic topic = _repo.GetById(id);
+                if (topic == null)
+                {
+                    return NotFound();
+                }
+                return Ok(topic);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
+        [HttpGet]
         [Route("allByCategory/{id}"), ActionName("GetAllByCategory")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

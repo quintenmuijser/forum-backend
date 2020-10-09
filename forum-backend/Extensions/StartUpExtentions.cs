@@ -19,7 +19,7 @@ namespace forum_backend.Extensions
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsDevelopment", builder =>
+                options.AddPolicy("cors", builder =>
                 {
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 });

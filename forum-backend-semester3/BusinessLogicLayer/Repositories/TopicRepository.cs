@@ -64,7 +64,8 @@ namespace BusinessLogicLayer.Repositories
 
         public Topic GetById(int topicId)
         {
-            throw new NotImplementedException();
+            TopicDTO topicDTO = _context.GetById(topicId);
+            return TopicFromTopicDTO(topicDTO);
         }
 
         public IReadOnlyList<Topic> GetTopicsContaining(string content)
