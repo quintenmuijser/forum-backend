@@ -52,7 +52,7 @@ namespace BusinessLogicLayer.Repositories
 
         public Category GetById(int categoryId)
         {
-            throw new NotImplementedException();
+            return CategoryFromCategoryDTO(_context.GetById(categoryId));
         }
 
         public IReadOnlyList<Category> GetAllBySectionId(int sectionId)

@@ -30,9 +30,26 @@ namespace BusinessLogicLayer.Repositories
             return topicFromDTO;
         }
 
-        public Topic Create()
+        public Reply ReplyFromReplyDTO(ReplyDTO replyDTO)
         {
-            throw new NotImplementedException();
+            Reply replyFromDTO = new Reply();
+            replyFromDTO.ReplyId = replyDTO.ReplyId;
+            replyFromDTO.TopicId = replyDTO.TopicId;
+            replyFromDTO.UserId = replyDTO.UserId;
+            replyFromDTO.Content = replyDTO.Content;
+            return replyFromDTO;
+        }
+
+        public Topic Create(TopicCreateDTO topicCreate)
+        {
+            TopicDTO topicDTO = _context.Create(topicCreate);
+            return TopicFromTopicDTO(topicDTO);
+        }
+
+        public Reply CreateReply(ReplyCreateDTO replyCreate)
+        {
+            ReplyDTO replyDTO = _context.CreateReply(replyCreate);
+            return ReplyFromReplyDTO(replyDTO);
         }
 
         public bool Delete(int topicId)

@@ -235,3 +235,13 @@ C:\Users\quint\Desktop\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\BCryp
 C:\Users\quint\Desktop\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\quint\Desktop\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\quint\Desktop\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\BCrypt.Net-Core.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\quint\OneDrive\Bureaublad\forum-backend\forum-backend\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

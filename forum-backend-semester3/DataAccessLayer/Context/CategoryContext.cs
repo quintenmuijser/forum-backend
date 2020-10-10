@@ -82,7 +82,31 @@ namespace DataAccessLayer.Context
 
         public CategoryDTO GetById(int categoryId)
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            CategoryDTO category;
+            using (MySqlConnection connection = _conn)
+            {
+                string query = "SELECT * FROM category WHERE category_id = @CategoryId";
+                MySqlTransaction transaction = connection.BeginTransaction();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    command.Parameters.AddWithValue("@CategoryId", categoryId);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            category = CategoryDTOFromMySqlDataReader(reader);
+                        }
+                        else
+                        {
+                            category = null;
+                        }
+                    }
+                }
+            }
+            return category;
         }
 
      

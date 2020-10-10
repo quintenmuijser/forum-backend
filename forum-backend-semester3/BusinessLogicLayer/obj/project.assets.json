@@ -6095,11 +6095,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+      "projectUniqueName": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
       "projectName": "BusinessLogicLayer",
-      "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
+      "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\BusinessLogicLayer.csproj",
       "packagesPath": "C:\\Users\\quint\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\obj\\",
+      "outputPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\BusinessLogicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\quint\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6115,8 +6115,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\quint\\Desktop\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\quint\\OneDrive\\Bureaublad\\forum-backend\\forum-backend-semester3\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -6161,18 +6161,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

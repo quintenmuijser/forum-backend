@@ -8,7 +8,8 @@ namespace DataAccessLayer.Interfaces
 {
     public interface ITopicContext
     {
-        TopicDTO Create();
+        TopicDTO Create(TopicCreateDTO topicCreate);
+        ReplyDTO CreateReply(ReplyCreateDTO replyCreate);
         TopicDTO GetById(int topicId);
         bool Delete(int topicId);
         bool Lock(int topicId, int userId);

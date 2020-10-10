@@ -68,5 +68,34 @@ namespace forum_backend.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        [HttpGet]
+        [Route("GetById/{id}"), ActionName("GetCategory")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult GetById(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest("Request doesn't pass validation");
+                }
+                Category category = _repo.GetById(id);
+                if (category == null)
+                {
+                    return NotFound();
+                }
+                return Ok(category);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
     }
 }

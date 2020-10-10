@@ -16,10 +16,136 @@ namespace DataAccessLayer.Context
             _DB = DB;
         }
 
-        public TopicDTO Create()
+        public TopicDTO Create(TopicCreateDTO topicCreate)
         {
-            throw new NotImplementedException();
+            MySqlConnection _conn = _DB.GetConnection();
+            int id;
+            MySqlConnection connection = _conn;
+            {
+                string query = "INSERT INTO topic " +
+                    "(category_id, creator_id, title, content, locked)" +
+                    "VALUES (@CategoryId, @CreatorId, @Title, @Content, @Locked)";
+                MySqlTransaction transaction = connection.BeginTransaction();
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    command.Parameters.AddWithValue("@CategoryId", topicCreate.CategoryId);
+                    command.Parameters.AddWithValue("@CreatorId", topicCreate.CreatorId);
+                    command.Parameters.AddWithValue("@Title", topicCreate.Title);
+                    command.Parameters.AddWithValue("@Content", topicCreate.Content);
+                    command.Parameters.AddWithValue("@Locked", topicCreate.Locked);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (MySqlException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        throw e;
+                    }
+                }
+                query = "SELECT topic_id FROM topic ORDER BY topic_id DESC LIMIT 1";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            id = Convert.ToInt32(reader["topic_id"]);
+                        }
+                        else
+                        {
+                            id = 0;
+                        }
+                    }
+                }
+                try
+                {
+                    transaction.Commit();
+                }
+                catch (MySqlException e)
+                {
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    Console.WriteLine(e.Message);
+                }
+            }
+            TopicDTO createdTopic = new TopicDTO(id, topicCreate.CategoryId, topicCreate.CreatorId, topicCreate.Title, topicCreate.Content, topicCreate.Locked);
+
+            return createdTopic;
         }
+
+        public ReplyDTO CreateReply(ReplyCreateDTO replyCreate)
+        {
+            MySqlConnection _conn = _DB.GetConnection();
+            int id;
+            MySqlConnection connection = _conn;
+            {
+                string query = "INSERT INTO reply " +
+                    "(user_id, topic_id, content)" +
+                    "VALUES (@UserId, @TopicId, @Content)";
+                MySqlTransaction transaction = connection.BeginTransaction();
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    command.Parameters.AddWithValue("@UserId", replyCreate.UserId);
+                    command.Parameters.AddWithValue("@TopicId", replyCreate.TopicId);
+                    command.Parameters.AddWithValue("@Content", replyCreate.Content);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (MySqlException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        throw e;
+                    }
+                }
+                query = "SELECT reply_id FROM reply ORDER BY reply_id DESC LIMIT 1";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Transaction = transaction;
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            id = Convert.ToInt32(reader["reply_id"]);
+                        }
+                        else
+                        {
+                            id = 0;
+                        }
+                    }
+                }
+                try
+                {
+                    transaction.Commit();
+                }
+                catch (MySqlException e)
+                {
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    Console.WriteLine(e.Message);
+                }
+            }
+            ReplyDTO createdReply = new ReplyDTO(id, replyCreate.UserId, replyCreate.TopicId, replyCreate.Content);
+
+            return createdReply;
+        }
+
 
         public bool Delete(int topicId)
         {
@@ -124,6 +250,16 @@ namespace DataAccessLayer.Context
             Convert.ToString(reader["content"]),
             Convert.ToBoolean(reader["locked"]));
             return topic;
+        }
+
+        public ReplyDTO ReplyDTOFromMySqlDataReader(MySqlDataReader reader)
+        {
+            ReplyDTO reply = new ReplyDTO(
+            Convert.ToInt32(reader["reply_id"]),
+            Convert.ToInt32(reader["user_id"]),
+            Convert.ToInt32(reader["topic_id"]),
+            Convert.ToString(reader["content"]));
+            return reply;
         }
     }
 }

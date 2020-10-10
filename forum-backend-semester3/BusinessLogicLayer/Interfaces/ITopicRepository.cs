@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Models;
+using DataAccessLayer.DataTransferObjects;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ namespace BusinessLogicLayer.Interfaces
     public interface ITopicRepository
     {
         //later this needs the topicCreateDTO as varible in it
-        Topic Create();
+        Reply CreateReply(ReplyCreateDTO replyCreate);
+        Topic Create(TopicCreateDTO topicCreate);
         Topic GetById(int topicId);
         bool Delete(int topicId);
         bool Lock(int topicId, int userId);
